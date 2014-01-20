@@ -26,33 +26,22 @@ def main():
         pygame.mixer.music.load(y)
         pygame.mixer.music.play()
         time.sleep(01)
-
+        
     while True:
-        ev = pygame.event.poll()    # Look for any event
-        if ev.type == pygame.QUIT:  # Window close button clicked?
-            break                   #   ... leave game loop
+        try:
+                if (GPIO.input(24) != 0):
+                        print "24 pressed"                      #   leave the game loop.
+                        randomBad = choice(bad)
+                        wrongPress(randomBad)
+                        print randomBad
+                        sleep(2.51);
+                if (GPIO.input(25) != 0):
+                        print "24 pressed"                      #   leave the game loop.
+                        randomGood = choice(good)
+                        rightPress(randomGood % str)
+                        print randomGood
+                        sleep(2.51);
+        except KeyboardInterrupt:
+                exit()
 
-        if ev.type == pygame.KEYDOWN:
-          key = ev.dict["key"]
-          if ( GPIO.input(24) != 0 ):     # b key press             
-              print "24 pressed"                      #   leave the game loop.
-              randomBad = choice(bad)
-              wrongPress(randomBad)
-              print randomBad
-              sleep(2.51);
-          if ( GPIO.input(25) != 0 ):   #a key press
-              print "24 pressed"                      #   leave the game loop.
-              randomGood = choice(good)
-              rightPress(randomGood % str)
-              print randomGood
-              sleep(2.51);
-          elif key == 27:                  # On Escape key ...
-            break  
-          
-
-        # Update your game objects and data structures here...
-
-
-    pygame.quit()     # Once we leave the loop, close the window.
-
-main()
+  
