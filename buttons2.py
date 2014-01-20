@@ -16,31 +16,31 @@ pygame.init()      # Prepare the pygame module for use
 
 
 
-    def wrongPress(y):
-        pygame.mixer.music.load(y)
-        pygame.mixer.music.play()
-        time.sleep(01)
+def wrongPress(y):
+    pygame.mixer.music.load(y)
+    pygame.mixer.music.play()
+    time.sleep(01)
 
-    def rightPress(y):
-        pygame.mixer.music.load(y)
-        pygame.mixer.music.play()
-        time.sleep(01)
+def rightPress(y):
+    pygame.mixer.music.load(y)
+    pygame.mixer.music.play()
+    time.sleep(01)
         
-    while True:
-        try:
-                if (GPIO.input(24) != 0):
-                        print "24 pressed"                      #   leave the game loop.
-                        randomBad = choice(bad)
-                        wrongPress(randomBad)
-                        print randomBad
-                        sleep(2.51);
-                if (GPIO.input(25) != 0):
-                        print "24 pressed"                      #   leave the game loop.
-                        randomGood = choice(good)
-                        rightPress(randomGood % str)
-                        print randomGood
-                        sleep(2.51);
-        except KeyboardInterrupt:
+while True:
+    try:
+            if (GPIO.input(24) != 0):
+                    print "24 pressed"                      #   leave the game loop.
+                    randomBad = choice(bad)
+                    wrongPress(randomBad)
+                    print randomBad
+                    sleep(2.51);
+            if (GPIO.input(25) != 0):
+                    print "24 pressed"                      #   leave the game loop.
+                    randomGood = choice(good)
+                    rightPress(randomGood % str)
+                    print randomGood
+                    sleep(2.51);
+    except KeyboardInterrupt:
                 exit()
 
   
