@@ -40,7 +40,7 @@ def main():
               wrongPress(randomBad)
               print randomBad
               sleep(2.51);
-          elif key == 97:   #a key press
+          if ( GPIO.input(25) != 0 ):   #a key press
               print "24 pressed"                      #   leave the game loop.
               randomGood = choice(good)
               rightPress(randomGood % str)
