@@ -14,10 +14,10 @@ good = ['youreright.wav','Cheering.wav']
 def main():
     """ Set up the game and run the main game loop """
     pygame.init()      # Prepare the pygame module for use
-    surface_sz = 1050   # Desired physical surface size, in pixels.
+    surface_sz = 480   # Desired physical surface size, in pixels.
 
     # Create surface of (width, height), and its window.
-    main_surface = pygame.display.set_mode((1680, surface_sz))
+    main_surface = pygame.display.set_mode((480, surface_sz))
 
     # Set up some data to describe a small rectangle and its color
     small_rect = (300, 200, 150, 90)
