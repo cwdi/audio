@@ -35,9 +35,9 @@ while True:
                     print randomBad
                     sleep(2.51);
             if (GPIO.input(25) != 0):
-                    print "24 pressed"                      #   leave the game loop.
+                    print "25 pressed"                      #   leave the game loop.
                     randomGood = choice(good)
-                    rightPress(randomGood % str)
+                    rightPress(randomGood)
                     print randomGood
                     sleep(2.51);
     except KeyboardInterrupt:
