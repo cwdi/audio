@@ -8,8 +8,8 @@ GPIO.setup(23, GPIO.IN)
 GPIO.setup(24, GPIO.IN)
 GPIO.setup(25, GPIO.IN)
 
-bad = ['wronganswer.wav', 'buzzwrong.wav']
-good = ['youreright.wav','Cheering.wav']
+bad = ['wronganswer.wav', 'buzzwrong.wav', 'nottrue.wav', 'noway.wav']
+good = ['youreright.wav','Cheering.wav', 'congratulations.wav', 'whyyes.wav']
 
 
 pygame.init()      # Prepare the pygame module for use
